@@ -27,6 +27,7 @@ fn main() {
         .file(mh_src_dir.join("hook.c"))
         .file(mh_src_dir.join("trampoline.c"))
         .file(mh_src_dir.join(hde))
+        .define("MINHOOK_DISABLE_INTRINSICS", None)
         .compile("libminhook.a");
 
     println!("cargo:rerun-if-changed=minhook/src");
